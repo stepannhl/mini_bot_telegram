@@ -1,3 +1,4 @@
+# gitADD https://github.com/stepannhl/mini_bot_telegram.git
 import logging
 # Импорт библиотек для бота
 from random import randint
