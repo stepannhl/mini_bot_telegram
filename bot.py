@@ -51,6 +51,11 @@ def msg_caption(i):
     return string
 
 
+def folder(i):
+    string = f'C:/Users/stepa/Desktop/bot/bot start/pict/{i}.jpg'
+    return string
+
+
 # Задаем метку старта бота
 @dp.message_handler(commands=['start'])
 async def process_start_command(message: types.Message):
@@ -77,7 +82,7 @@ async def send_random_value(message: types.Message):
         r = str(randint(1, 31))
         await bot.send_photo(chat_id=message.from_user.id,
                              # дергаем фотки из локального адреса
-                             photo=open(f'C:/Users/stepa/Desktop/bot/bot start/pict/{r}.jpg', 'rb'),
+                             photo=open(folder(r), 'rb'),
                              caption=msg_caption(r))
     # тк бот асинхронный, для простоты любое вхождение по меню мы обрабатываем соответствюще
     elif message.text in ('Случайный фильм по категории🍕',
@@ -99,32 +104,32 @@ async def send_random_value(message: types.Message):
         if message.text == 'Фантастика👩‍🚀':
             r = str(randint(1, 5))
             await bot.send_photo(chat_id=message.from_user.id,
-                                 photo=open(f'C:/Users/stepa/Desktop/bot/bot start/pict/{r}.jpg', 'rb'),
+                                 photo=open(folder(r), 'rb'),
                                  caption=msg_caption(r), reply_markup=board)
         elif message.text == 'Драма💧':
             r = str(randint(6, 11))
             await bot.send_photo(chat_id=message.from_user.id,
-                                 photo=open(f'C:/Users/stepa/Desktop/bot/bot start/pict/{r}.jpg', 'rb'),
+                                 photo=open(folder(r), 'rb'),
                                  caption=msg_caption(r), reply_markup=board)
         elif message.text == 'Комедия💃':
             r = str(randint(12, 16))
             await bot.send_photo(chat_id=message.from_user.id,
-                                 photo=open(f'C:/Users/stepa/Desktop/bot/bot start/pict/{r}.jpg', 'rb'),
+                                 photo=open(folder(r), 'rb'),
                                  caption=msg_caption(r), reply_markup=board)
         elif message.text == 'Ужастик👻':
             r = str(randint(17, 21))
             await bot.send_photo(chat_id=message.from_user.id,
-                                 photo=open(f'C:/Users/stepa/Desktop/bot/bot start/pict/{r}.jpg', 'rb'),
+                                 photo=open(folder(r), 'rb'),
                                  caption=msg_caption(r), reply_markup=board)
         elif message.text == 'Триллер🍿':
             r = str(randint(22, 26))
             await bot.send_photo(chat_id=message.from_user.id,
-                                 photo=open(f'C:/Users/stepa/Desktop/bot/bot start/pict/{r}.jpg', 'rb'),
+                                 photo=open(folder(r), 'rb'),
                                  caption=msg_caption(r), reply_markup=board)
         elif message.text == 'Мультфильм🥺':
             r = str(randint(27, 31))
             await bot.send_photo(chat_id=message.from_user.id,
-                                 photo=open(f'C:/Users/stepa/Desktop/bot/bot start/pict/{r}.jpg', 'rb'),
+                                 photo=open(folder(r), 'rb'),
                                  caption=msg_caption(r), reply_markup=board)
 
         # каждый раз по тапу на любую категорию, показываем текстовку из начала, для возможности к навигации
